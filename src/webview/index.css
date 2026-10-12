@@ -1,0 +1,496 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+@font-face {
+    font-family: "Gilroy-bold";
+    src: url("./assets/fonts/Gilroy-ExtraBold.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Gilroy";
+    src: url("./assets/fonts/Gilroy-Light.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Minecrafter";
+    src: url("./assets/fonts/Minecrafter.Reg.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Indie Flower";
+    src: url("./assets/fonts/IndieFlower-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Police variable : un seul fichier pour tous les poids */
+@font-face {
+    font-family: "Nunito Sans";
+    src: url("./assets/fonts/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf") format("truetype");
+    font-weight: 200 1000;
+    font-stretch: 75% 125%;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    background-image: url(./assets/background1.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.page {
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+}
+
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(90deg,
+            rgba(20, 11, 6, 0.60),
+            rgba(45, 22, 10, 0.70));
+
+    border: 1px solid rgba(150, 72, 18, 0.55);
+    border-radius: 24px;
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow:
+        inset 0 0 30px rgba(0, 0, 0, 0.3),
+        0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.sidebar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+
+    background: linear-gradient(to bottom,
+            transparent,
+            #9a4b15,
+            transparent);
+
+    opacity: 0.6;
+}
+
+.sidebar .content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar .content .logo {
+    width: 170px;
+    height: 170px;
+    margin-top: 15px;
+    margin-bottom: 0px;
+}
+
+.sidebar .content .title {
+    color: #f5963b;
+    font-family: "Minecrafter", monospace;
+    font-size: 25px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-top: 0px;
+    margin-bottom: 0;
+}
+
+.sidebar .content .title_desc {
+    color: #967f70;
+    font-family: "Nunito Sans", sans-serif;
+    margin-top: 0px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    font-size: 16px;
+
+}
+
+.sidebar .content .slogan {
+    color: #d69257;
+    font-family: "Indie Flower", cursive;
+    font-weight: 300;
+    font-size: 22px;
+    transform: rotate(-5deg);
+    transform-origin: left center;
+    margin: 0;
+    margin-left: -10px;
+}
+
+.sidebar .content .slogan2 {
+    margin-top: -10px;
+    margin-left: 50px;
+    color: #ffa75a;
+}
+
+.sidebar .content .button_handler {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.sidebar .content .icon {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+    margin-left: 5px;
+}
+
+.sidebar .content .button {
+    font-family: "Gilroy", sans-serif;
+    width: 90%;
+    color: #fff;
+    border-radius: 7px;
+    font-size: 16px;
+    font-weight: 600;
+    height: 50px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    transition: all 600ms;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.sidebar .content .button:hover {
+    background-color: #984613;
+}
+
+.sidebar .content .active {
+    background-color: #984613;
+    color: #e8dacf;
+}
+
+.sidebar .content .nav_footer {
+    font-family: "Indie Flower", cursive;
+    transform: rotate(-5deg);
+    transform-origin: left center;
+    color: #c97335;
+    margin: 0px;
+    font-size: 18px;
+    margin-top: 90px;
+}
+
+.sidebar .content .version {
+    margin-top: 10px;
+    color: #ad9b8d;
+    font-family: "Gilroy", sans-serif;
+    margin: 0px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.middle {
+    width: 650px;
+    height: 70%;
+    margin-top: 200px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.middle .welcome {
+    color: #f1b857;
+    font-family: "Gilroy", sans-serif;
+    margin: 0px;
+    margin-bottom: 10px;
+    font-size: 19px;
+}
+
+.middle .title {
+    color: #f8c68d;
+    font-family: "Minecrafter", monospace;
+    margin: 0px;
+    font-size: 50px;
+    font-weight: 100;
+}
+
+.middle .desc {
+    color: #f0dfbc;
+    font-family: "Gilroy", sans-serif;
+    font-weight: 900;
+    margin: 0px;
+    font-size: 22px;
+}
+
+.middle .desc2 {
+    margin-bottom: 10px;
+}
+
+.middle .play {
+    width: 100%;
+    height: 180px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.middle .play .version {
+    background-color: #1a0f0c;
+    border: rgb(46, 46, 46) 2px;
+    width: 300px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 12px;
+    margin-right: 60px;
+    margin-left: 30px;
+    font-family: "Gilroy", sans-serif;
+}
+
+.middle .play .version p {
+    margin: 0px;
+}
+
+.middle .play .version .neoforge {
+    width: 35px;
+    height: 35px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 12px;
+}
+
+.middle .play .version .version_txt .versiontitle {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 900;
+
+}
+
+.middle .play .version .version_txt .versiondesc {
+    color: #8b8b8b;
+    font-size: 16px;
+    font-weight: 900;
+
+}
+
+.middle .play .playButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: #ff6302;
+    color: #fcead4;
+    width: 200px;
+    height: 60px;
+    font-size: 24px;
+    font-family: "Gilroy-Bold", sans-serif;
+    font-weight: bold;
+    border-radius: 12px;
+    transition: all 400ms;
+    cursor: pointer;
+}
+
+.middle .play .playButton:hover {
+    background-color: #a74b12;
+}
+
+.middle .play .playButton .playimg {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+
+
+.middle .actu {
+    width: 100%;
+    height: 100%;
+}
+
+.middle .actu .actuTitle {
+    color: #f8c68d;
+    font-family: "Gilroy", sans-serif;
+    font-weight: 900;
+    font-size: 25px;
+    text-transform: capitalize;
+    margin-left: 25px;
+}
+
+.right {
+    margin-left: 10px;
+    width: 350px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.right .top {
+    display: flex;
+    flex-direction: row;
+}
+
+.right .top .profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 230px;
+    height: 70px;
+    margin-right: 15px;
+}
+
+.right .top .profile .profilePicture {
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.right .top .profile .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.right .top .profile .text .name {
+    margin: 0px;
+    color: #fff;
+    font-family: "Gilroy", sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+}
+
+.right .top .profile .text .statusDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 4px;
+}
+
+.right .top .profile .dot {
+    border-radius: 100px;
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: rgb(15, 211, 15);
+}
+
+.right .top .profile .text .status {
+    color: #fff;
+    font-family: "Gilroy", sans-serif;
+    margin: 0px;
+}
+
+.right .top .leave {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 90px;
+    height: 50px;
+}
+.reduceButton{
+    margin-left: 5px !important;
+}
+
+.reduceButton,
+.leaveButton {
+    width: 40px;
+    height: 40px;
+
+    margin: 0px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    color: #f8c68d;
+
+    transition:
+        background-color 0.15s ease,
+        color 0.15s ease;
+}
+
+.reduceButton svg,
+.leaveButton svg {
+    width: 30px;
+    height: 30px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+
+.reduceButton:hover svg,
+.leaveButton:hover svg{
+    width: 35px;
+    height: 35px;
+}
+
+.reduceButton:active,
+.leaveButton:active {
+    background-color: rgba(248, 198, 141, 0.2);
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(90deg,
+            rgba(20, 11, 6, 0.60),
+            rgba(45, 22, 10, 0.70));
+
+    border: 1px solid rgba(150, 72, 18, 0.55);
+    border-radius: 12px;
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow:
+        inset 0 0 30px rgba(0, 0, 0, 0.3),
+        0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+
+    background: linear-gradient(to bottom,
+            transparent,
+            #9a4b15,
+            transparent);
+
+    opacity: 0.6;
+}

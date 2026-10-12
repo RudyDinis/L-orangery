@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Orangery</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #fff;
+      overflow: hidden;
+      user-select: none;
+      -webkit-app-region: drag; /* permet de déplacer la fenêtre sans bordure */
+
+      /* Fond : dégradé, ou décommente la ligne image */
+      background: linear-gradient(160deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      /* background: url('assets/background.png') center / cover no-repeat; */
+    }
+
+    .logo {
+      width: 160px;
+      height: 160px;
+      object-fit: contain;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    #text {
+      font-size: 15px;
+      opacity: 0.9;
+      text-align: center;
+      min-height: 20px;
+    }
+
+    .bar {
+      width: 260px;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 3px;
+      overflow: hidden;
+      visibility: hidden;
+    }
+
+    #fill {
+      height: 100%;
+      width: 0%;
+      background: #ff9f1c;
+      border-radius: 3px;
+      transition: width 0.2s ease;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50%      { transform: scale(1.05); }
+    }
+  </style>
+</head>
+<body>
+  <img class="logo" src="../assets/logo.png" alt="Logo">
+  <p id="text">Recherche de mises à jour…</p>
+  <div class="bar" id="bar"><div id="fill"></div></div>
+
+  <script>
+    const text = document.getElementById('text');
+    const bar  = document.getElementById('bar');
+    const fill = document.getElementById('fill');
+
+    window.updater.onStatus(({ status, data }) => {
+      switch (status) {
+        case 'checking':
+          text.textContent = 'Recherche de mises à jour…';
+          break;
+        case 'available':
+          text.textContent = `Mise à jour ${data} trouvée…`;
+          bar.style.visibility = 'visible';
+          break;
+        case 'progress':
+          bar.style.visibility = 'visible';
+          fill.style.width = data + '%';
+          text.textContent = `Téléchargement : ${Math.round(data)}%`;
+          break;
+        case 'downloaded':
+          fill.style.width = '100%';
+          text.textContent = 'Installation, redémarrage…';
+          break;
+        case 'none':
+          text.textContent = 'Launcher à jour, lancement…';
+          break;
+        case 'error':
+          text.textContent = 'Serveur injoignable, lancement…';
+          break;
+      }
+    });
+  </script>
+</body>
+</html>

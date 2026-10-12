@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self'; img-src 'self' https://api.mcheads.org data:;" />
+  <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+  <!-- Anti flash blanc : couleur de fond dès le tout premier paint -->
+  <style>
+    html, body { background: #0d0d0d; margin: 0; }
+  </style>
+  <link rel="stylesheet" href="./index.css" />
+  <link rel="stylesheet" href="./mods/mods.css" />
+  <link rel="stylesheet" href="./settings/settings.css" />
+</head>
+
+<body>
+  <div class="page">
+    <nav class="sidebar">
+      <div class="content">
+        <img src="./assets/logo.png" alt="" class="logo">
+        <h1 class="title">ORANGERY</h1>
+        <h2 class="title_desc">LAUNCHER</h2>
+        <h3 class="slogan">Plus qu'un jeu,</h3>
+        <h3 class="slogan slogan2">une aventure.</h3>
+        <div class="button_handler">
+          <div class="button active" data-view="home">
+            <img class="icon" src="./assets/home-svgrepo-com.svg" alt="">
+            Accueil
+          </div>
+
+          <div class="button" data-view="mods">
+            <img class="icon" src="./assets/curseforge-svgrepo-com.svg" alt="">
+            Mods
+          </div>
+
+          <div class="button" data-view="settings">
+            <img class="icon" src="./assets/settings-ui-svgrepo-com.svg" alt="">
+            Paramètres
+          </div>
+        </div>
+
+        <p class="nav_footer">Merci d'être ici !</p>
+        <p class="version" id="appVersion">v0.0.1</p>
+      </div>
+    </nav>
+
+    <!-- ================= VUE ACCUEIL ================= -->
+    <div class="middle view" id="view-home">
+      <h2 class="welcome">BIENVENUE SUR</h2>
+      <h1 class="title">L'ORANGERY</h1>
+      <p class="desc">Explore. Construis. Partage.</p>
+      <p class="desc desc2">Un monde de possibilités t'attend !</p>
+
+      <div class="card play">
+        <div class="version">
+          <img src="./assets/neoforge.png" alt="" class="neoforge">
+          <div class="version_txt">
+            <p class="versiontitle">NeoForge 1.21.1</p>
+            <p class="versiondesc">21.1.250</p>
+          </div>
+        </div>
+        <div class="playButton" id="launch">
+          <img src="./assets/play-button-svgrepo-com.svg" alt="" class="playimg">
+          Jouer
+        </div>
+      </div>
+
+      <div class="card actu">
+        <h1 class="actuTitle">actualités</h1>
+      </div>
+    </div>
+
+    <!-- ================= VUE MODS ================= -->
+    <section class="settings view hidden" id="view-mods">
+      <h1 class="settings_title">MODS</h1>
+      <p class="settings_sub">Les mods inclus dans le modpack.</p>
+
+      <div class="mods_toolbar">
+        <input type="text" id="modsSearch" class="search" placeholder="Rechercher un mod…" autocomplete="off">
+        <span class="mods_count" id="modsCount"></span>
+      </div>
+
+      <div class="mods_list" id="modsList"></div>
+    </section>
+
+    <!-- ================= VUE PARAMÈTRES ================= -->
+    <section class="settings view hidden" id="view-settings">
+      <h1 class="settings_title">PARAMÈTRES</h1>
+      <p class="settings_sub">Personnalise ton expérience de jeu.</p>
+
+      <div class="card setting_card">
+        <h2>Mémoire (RAM)</h2>
+        <p class="setting_desc">Plus de RAM aide avec les gros modpacks. Recommandé : 4 à 6 Go.</p>
+
+        <div class="slider_row">
+          <label for="ramMin">Minimum</label>
+          <input type="range" id="ramMin" class="slider" min="2" max="16" step="1">
+          <span class="slider_value" id="ramMinValue">2 Go</span>
+        </div>
+
+        <div class="slider_row">
+          <label for="ramMax">Maximum</label>
+          <input type="range" id="ramMax" class="slider" min="2" max="16" step="1">
+          <span class="slider_value" id="ramMaxValue">4 Go</span>
+        </div>
+
+        <p class="hint" id="ramHint"></p>
+      </div>
+
+      <div class="card setting_card">
+        <h2>Dossier du jeu</h2>
+        <p class="path" id="dataDir">…</p>
+        <div class="setting_row">
+          <p class="setting_desc">Contient les mods, les configs et tes sauvegardes.</p>
+          <button class="btn" id="openFolder">Ouvrir le dossier</button>
+        </div>
+      </div>
+
+      <div class="card setting_card">
+        <div class="setting_row">
+          <div>
+            <h2>Compte Microsoft</h2>
+            <p class="setting_desc">Tu devras te reconnecter au prochain lancement.</p>
+          </div>
+          <button class="btn btn_danger" id="logout">Se déconnecter</button>
+        </div>
+      </div>
+
+      <div class="card setting_card">
+        <div class="setting_row">
+          <div>
+            <h2>Réinitialiser</h2>
+            <p class="setting_desc">Remet la RAM et les options par défaut.</p>
+          </div>
+          <button class="btn" id="resetSettings">Réinitialiser</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="right">
+      <div class="top">
+        <div class="card profile">
+          <img src="" alt="" id="profilePicture" class="profilePicture">
+          <div class="text">
+            <p class="name" id="name">Unknow</p>
+            <div class="statusDiv">
+              <div class="dot"></div>
+              <p class="status" id="status">Hors ligne</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card leave">
+          <p class="reduceButton" id="btn-min">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14" />
+            </svg>
+          </p>
+
+          <p class="leaveButton" id="btn-close">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 6l12 12M18 6L6 18" />
+            </svg>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <!-- Le routeur doit être chargé avant les scripts de page -->
+  <script src="./router.js"></script>
+  <script src="./index.js"></script>
+  <script src="./mods/mods.js"></script>
+  <script src="./settings/settings.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Orangery</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #fff;
+      overflow: hidden;
+      user-select: none;
+      -webkit-app-region: drag;
+      background: linear-gradient(160deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    }
+
+    .logo {
+      width: 160px;
+      height: 160px;
+      object-fit: contain;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    #text {
+      font-size: 15px;
+      opacity: 0.9;
+      text-align: center;
+      min-height: 20px;
+      padding: 0 20px;
+    }
+
+    #text.error {
+      color: #ff6b6b;
+      opacity: 1;
+    }
+
+    .bar {
+      width: 260px;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 3px;
+      overflow: hidden;
+      visibility: hidden;
+    }
+
+    #fill {
+      height: 100%;
+      width: 0%;
+      background: #ff9f1c;
+      border-radius: 3px;
+      transition: width 0.2s ease;
+    }
+
+    #details {
+      font-size: 13px;
+      opacity: 0.7;
+      min-height: 18px;
+      margin-top: -12px;
+      /* rapproche du bas de la barre */
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <img class="logo" src="../assets/logo.png" alt="Logo">
+  <p id="text">Préparation du lancement…</p>
+  <div class="bar" id="bar">
+    <div id="fill"></div>
+  </div>
+  <p id="details"></p>
+
+  <script>
+    const text = document.getElementById('text');
+    const bar = document.getElementById('bar');
+    const fill = document.getElementById('fill');
+    const details = document.getElementById('details');
+
+    const setBar = (percent) => {
+      bar.style.visibility = 'visible';
+      fill.style.width = percent + '%';
+    };
+
+    const formatSpeed = (bytesPerSec) => {
+      const mo = bytesPerSec / (1024 * 1024);
+      return mo >= 1
+        ? `${mo.toFixed(1)} Mo/s`
+        : `${Math.round(bytesPerSec / 1024)} Ko/s`;
+    };
+
+    const formatEta = (seconds) => {
+      const s = Math.round(seconds);
+      if (s < 60) return `${s} s`;
+      const m = Math.floor(s / 60);
+      if (m < 60) return `${m} min ${String(s % 60).padStart(2, '0')} s`;
+      return `${Math.floor(m / 60)} h ${String(m % 60).padStart(2, '0')} min`;
+    };
+
+    window.launchEvents.onStatus(({ status, data }) => {
+      if (status !== 'progress') details.textContent = '';
+
+      switch (status) {
+        case 'check':
+          setBar(data);
+          text.textContent = `Vérification des fichiers : ${Math.round(data)}%`;
+          break;
+
+        case 'progress': {
+          setBar(data.percent);
+          text.textContent = `Téléchargement : ${Math.round(data.percent)}%`;
+
+          if (data.speed > 0) {
+            const eta = data.eta !== null ? ` · ${formatEta(data.eta)} restantes` : '';
+            details.textContent = formatSpeed(data.speed) + eta;
+          } else {
+            details.textContent = 'Calcul de la vitesse…';
+          }
+          break;
+        }
+
+        case 'extract':
+          text.textContent = 'Extraction des fichiers…';
+          break;
+        case 'patch':
+          text.textContent = 'Installation de NeoForge…';
+          break;
+        case 'started':
+          setBar(100);
+          text.textContent = 'Lancement de Minecraft…';
+          break;
+        case 'error':
+          bar.style.visibility = 'hidden';
+          text.classList.add('error');
+          text.textContent = 'Erreur : ' + data;
+          break;
+      }
+    });
+  </script>
+</body>
+
+</html>

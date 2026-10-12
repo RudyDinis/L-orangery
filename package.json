@@ -1,0 +1,56 @@
+{
+  "name": "orangery",
+  "version": "0.0.10",
+  "description": "Launcher for orangery server",
+  "license": "UNLICENSED",
+  "author": "Mrjango",
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && electron ."
+  },
+  "build": {
+    "appId": "com.tonnom.launcher",
+    "artifactName": "${name}-Setup-${version}.${ext}",
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "icon": "assets/icon.ico"
+    },
+    "mac": {
+      "icon": "assets/icon.icns"
+    },
+    "linux": {
+      "icon": "assets/icon.png"
+    },
+    "files": [
+      "dist/**/*",
+      "src/webview/**/*",
+      "package.json",
+      "!dist/win-unpacked/**",
+      "!release/**"
+    ],
+    "publish": [
+      {
+        "provider": "generic",
+        "url": "https://updates.orangery.fr/"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.2",
+    "@types/semver": "^7.8.0",
+    "electron": "44.4.3",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "asar": "^3.2.0",
+    "electron-updater": "^6.8.9",
+    "minecraft-java-core": "^4.2.9",
+    "minecraft-server-util": "^5.4.4",
+    "semver": "^7.8.5"
+  }
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; img-src 'self' https://api.mcheads.org data:;" />
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+    <link rel="stylesheet" href="../index.css" />
+    <link rel="stylesheet" href="./mods.css">
+    <title>Bonjour depuis le rendu d'Electron !</title>
+</head>
+
+<body>
+    <div class="page">
+        <nav class="sidebar">
+            <div class="content">
+                <img src="../assets/logo.png" alt="" class="logo">
+                <h1 class="title">ORANGECRAFT</h1>
+                <h2 class="title_desc">LAUNCHER</h2>
+                <h3 class="slogan">Plus qu'un jeu,</h3>
+                <h3 class="slogan slogan2">une aventure.</h3>
+                <div class="button_handler">
+                    <div class="button" data-page="../index.html">
+                        <img class="icon" src="../assets/home-svgrepo-com.svg" alt="">
+                        Accueil
+                    </div>
+
+                    <div class="button active" data-page="../mods/mods.html">
+                        <img class="icon" src="../assets/curseforge-svgrepo-com.svg" alt="">
+                        Mods
+                    </div>
+
+                    <div class="button" data-page="../settings/settings.html">
+                        <img class="icon" src="../assets/settings-ui-svgrepo-com.svg" alt="">
+                        Paramètres
+                    </div>
+                </div>
+
+                <script src="../js/navigation.js"></script>
+                <p class="nav_footer">Merci d'être ici !</p>
+                <p class="version" id="appVersion">v0.0.1</p>
+            </div>
+        </nav>
+
+        <section class="settings" id="page-mods">
+            <h1 class="settings_title">MODS</h1>
+            <p class="settings_sub">Les mods inclus dans le modpack.</p>
+
+            <div class="mods_toolbar">
+                <input type="text" id="modsSearch" class="search" placeholder="Rechercher un mod…" autocomplete="off">
+                <span class="mods_count" id="modsCount"></span>
+            </div>
+
+            <div class="mods_list" id="modsList"></div>
+        </section>
+
+        <div class="right">
+            <div class="top">
+                <div class="card profile">
+                    <img src="" alt="" id="profilePicture" class="profilePicture">
+                    <div class="text">
+                        <p class="name" id="name">Unknow</p>
+                        <div class="statusDiv">
+                            <div class="dot"></div>
+                            <p class="status" id="status">Hors ligne</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card leave">
+                    <p class="reduceButton" id="btn-min">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M5 12h14" />
+                        </svg>
+                    </p>
+
+                    <p class="leaveButton" id="btn-close">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M6 6l12 12M18 6L6 18" />
+                        </svg>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="../navigation.js"></script>
+    <script src="./mods.js"></script>
+</body>
+
+</html>

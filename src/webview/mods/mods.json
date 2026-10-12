@@ -1,0 +1,444 @@
+{
+  "mods": [
+    {
+      "name": "Create",
+      "version": "6.0.10",
+      "author": "Creators of Create",
+      "category": "Technologie",
+      "description": "Machines, engrenages et automatisations mécaniques.",
+      "icon": "create.png"
+    },
+    {
+      "name": "Create: Aeronautics",
+      "version": "1.3.2",
+      "author": "Create Aeronautics Team",
+      "category": "Technologie",
+      "description": "Extension de Create ajoutant dirigeables et véhicules aériens.",
+      "icon": "create_aeronautics.png"
+    },
+    {
+      "name": "Applied Energistics 2",
+      "version": "19.2.17",
+      "author": "Applied Energistics Team",
+      "category": "Technologie",
+      "description": "Stockage numérique et automatisation des objets grâce à un réseau ME.",
+      "icon": "ae2.png"
+    },
+    {
+      "name": "Mowzie's Mobs",
+      "version": "1.8.2",
+      "author": "BobMowzie",
+      "category": "Aventure",
+      "description": "Des boss et créatures uniques, avec des combats dynamiques.",
+      "icon": "mowziesmobs.png"
+    },
+    {
+      "name": "Block Factory's Bosses",
+      "version": "2.1.2",
+      "author": "Block Factory",
+      "category": "Aventure",
+      "description": "Ajoute de nouveaux boss à affronter.",
+      "icon": "bf_bosses.jpeg"
+    },
+    {
+      "name": "Structory",
+      "version": "1.3.7",
+      "author": "Th3Dilli",
+      "category": "Exploration",
+      "description": "Nouvelles structures à découvrir dans le monde.",
+      "icon": "structory.png"
+    },
+    {
+      "name": "Block Factory's Biomes",
+      "version": "1.1.0",
+      "author": "Block Factory",
+      "category": "Exploration",
+      "description": "Ajoute de nouveaux biomes au monde.",
+      "icon": "bf_biomes.png"
+    },
+    {
+      "name": "Naturalist",
+      "version": "2.0.4",
+      "author": "Starfish Studios",
+      "category": "Faune",
+      "description": "Nouveaux animaux sauvages à observer, apprivoiser et nourrir.",
+      "icon": "naturalist.png"
+    },
+    {
+      "name": "CustomNPCs (Unofficial)",
+      "version": "1.21.1.20251230",
+      "author": "CustomNPCs Unofficial Team",
+      "category": "Contenu",
+      "description": "Ajoute des PNJ personnalisables avec dialogues, quêtes et scripts.",
+      "icon": "customnpcs.png"
+    },
+    {
+      "name": "FTB Quests",
+      "version": "2101.1.36",
+      "author": "FTB Team",
+      "category": "Contenu",
+      "description": "Système de quêtes personnalisables pour guider les joueurs.",
+      "icon": "ftbquests.png"
+    },
+    {
+      "name": "FTB Teams",
+      "version": "2101.1.11",
+      "author": "FTB Team",
+      "category": "Social",
+      "description": "Gestion des équipes et alliances entre joueurs.",
+      "icon": "ftbteams.png"
+    },
+    {
+      "name": "Supplementaries",
+      "version": "3.9.9",
+      "author": "MehVahdJukaar",
+      "category": "Décoration",
+      "description": "Ajoute de nombreux blocs utilitaires et décoratifs.",
+      "icon": "supplementaries.gif"
+    },
+    {
+      "name": "Backport",
+      "version": "1.0.9",
+      "author": "",
+      "category": "Contenu",
+      "description": "Ajoute des fonctionnalités issues de versions plus récentes de Minecraft.",
+      "icon": "backport.png"
+    },
+    {
+      "name": "Falling Tree",
+      "version": "1.21.1.11",
+      "author": "",
+      "category": "Utilitaire",
+      "description": "Abat un arbre entier d'un seul coup de hache.",
+      "icon": "fallingtree.png"
+    },
+    {
+      "name": "Just Enough Items",
+      "version": "19.51.0.418",
+      "author": "mezz",
+      "category": "Utilitaire",
+      "description": "Affiche tous les objets et leurs recettes de craft en jeu.",
+      "icon": "jei.png"
+    },
+    {
+      "name": "Xaero's Minimap",
+      "version": "26.5.0",
+      "author": "xaero96",
+      "category": "Utilitaire",
+      "description": "Une mini-carte pour se repérer et poser des balises.",
+      "icon": "xaerominimap.png"
+    },
+    {
+      "name": "Configured",
+      "version": "2.6.3",
+      "author": "MrCrayfish",
+      "category": "Utilitaire",
+      "description": "Modifie la configuration des mods depuis une interface en jeu.",
+      "icon": "configured.png"
+    },
+    {
+      "name": "Simple Voice Chat",
+      "version": "2.6.22",
+      "author": "henkelmax",
+      "category": "Social",
+      "description": "Chat vocal de proximité pour parler aux autres joueurs.",
+      "icon": "voicechat.png"
+    },
+    {
+      "name": "Sodium",
+      "version": "0.8.13",
+      "author": "JellySquid",
+      "category": "Optimisation",
+      "description": "Moteur de rendu optimisé qui augmente fortement les FPS.",
+      "icon": "sodium.png"
+    },
+    {
+      "name": "Iris Shaders",
+      "version": "1.8.14-beta.1",
+      "author": "coderbot",
+      "category": "Visuel",
+      "description": "Prise en charge des shaders, compatible avec Sodium.",
+      "icon": "iris.png"
+    },
+    {
+      "name": "Fusion",
+      "version": "1.3.15b",
+      "author": "PepperCode1",
+      "category": "Visuel",
+      "description": "Textures connectées : les blocs s'assemblent visuellement entre eux.",
+      "icon": "fusion.png"
+    },
+    {
+      "name": "AmbientSounds",
+      "version": "6.3.8",
+      "author": "CreativeMD",
+      "category": "Ambiance",
+      "description": "Sons d'ambiance selon l'environnement : grottes, forêts, océans…",
+      "icon": "ambientsounds.png"
+    },
+    {
+      "name": "Sound Physics Remastered",
+      "version": "1.5.1",
+      "author": "henkelmax",
+      "category": "Ambiance",
+      "description": "Sons réalistes : écho dans les grottes, étouffement derrière les murs.",
+      "icon": "soundphysics.png"
+    },
+    {
+      "name": "Refurbished Furniture",
+      "version": "1.0.22",
+      "author": "MrCrayfish",
+      "category": "Décoration",
+      "description": "Meubles et appareils fonctionnels pour aménager sa maison.",
+      "icon": "refurbished_furniture.png"
+    },
+    {
+      "name": "Furniture Mod Tools: Refurbished",
+      "version": "1.0.0",
+      "author": "",
+      "category": "Décoration",
+      "description": "Complément pour Refurbished Furniture.",
+      "icon": "furniture_tools.png"
+    },
+    {
+      "name": "Rechiseled",
+      "version": "1.2.6",
+      "author": "SuperMartijn642",
+      "category": "Décoration",
+      "description": "Des dizaines de variantes ciselées pour les blocs de construction.",
+      "icon": "rechiseled.png"
+    },
+    {
+      "name": "Macaw's Furniture",
+      "version": "3.4.1",
+      "author": "Macaw",
+      "category": "Décoration",
+      "description": "Tables, chaises, armoires et autres meubles en bois.",
+      "icon": "mcw_furniture.jpg"
+    },
+    {
+      "name": "Macaw's Bridges",
+      "version": "3.1.2",
+      "author": "Macaw",
+      "category": "Décoration",
+      "description": "Ponts de toutes formes et de toutes essences de bois.",
+      "icon": "mcw_bridges.jpeg"
+    },
+    {
+      "name": "Macaw's Fences and Walls",
+      "version": "1.2.1",
+      "author": "Macaw",
+      "category": "Décoration",
+      "description": "Clôtures, murets et portails variés.",
+      "icon": "mcw_fences.png"
+    },
+    {
+      "name": "Macaw's Stairs and Balconies",
+      "version": "1.0.2",
+      "author": "Macaw",
+      "category": "Décoration",
+      "description": "Escaliers, rambardes et balcons pour vos constructions.",
+      "icon": "mcw_stairs.png"
+    },
+    {
+      "name": "Macaw's Windows",
+      "version": "2.4.2",
+      "author": "Macaw",
+      "category": "Décoration",
+      "description": "Fenêtres, volets et rideaux de tous styles.",
+      "icon": "mcw_windows.png"
+    },
+    {
+      "name": "Macaw's Roofs",
+      "version": "2.3.2",
+      "author": "Macaw",
+      "category": "Décoration",
+      "description": "Toits, pignons et lucarnes pour finir vos maisons.",
+      "icon": "mcw_roofs.jpeg"
+    },
+    {
+      "name": "GeckoLib",
+      "version": "4.9.3",
+      "author": "Gecko",
+      "category": "Bibliothèque",
+      "description": "Moteur d'animation utilisé par de nombreux mods.",
+      "icon": "geckolib.png"
+    },
+    {
+      "name": "Framework",
+      "version": "0.13.11",
+      "author": "MrCrayfish",
+      "category": "Bibliothèque",
+      "description": "Bibliothèque requise par les mods de MrCrayfish.",
+      "icon": "framework.png"
+    },
+    {
+      "name": "GuideME",
+      "version": "21.1.19",
+      "author": "shartte",
+      "category": "Bibliothèque",
+      "description": "Guides intégrés au jeu, utilisés par Applied Energistics 2.",
+      "icon": "guideme.png"
+    },
+    {
+      "name": "Lithostitched",
+      "version": "1.8.0",
+      "author": "Apollo",
+      "category": "Bibliothèque",
+      "description": "Bibliothèque de génération de monde pour d'autres mods.",
+      "icon": "lithostitched.png"
+    },
+    {
+      "name": "CreativeCore",
+      "version": "2.13.48",
+      "author": "CreativeMD",
+      "category": "Bibliothèque",
+      "description": "Bibliothèque requise par les mods de CreativeMD.",
+      "icon": "creativecore.png"
+    },
+    {
+      "name": "SuperMartijn642's Core Lib",
+      "version": "1.1.24a",
+      "author": "SuperMartijn642",
+      "category": "Bibliothèque",
+      "description": "Bibliothèque requise par les mods de SuperMartijn642.",
+      "icon": "corelib.png"
+    },
+    {
+      "name": "SuperMartijn642's Config Lib",
+      "version": "1.1.8",
+      "author": "SuperMartijn642",
+      "category": "Bibliothèque",
+      "description": "Bibliothèque de configuration utilisée par les mods de SuperMartijn642.",
+      "icon": "configlib.png"
+    },
+    {
+      "name": "TCT Core",
+      "version": "2.3",
+      "author": "",
+      "category": "Bibliothèque",
+      "description": "Bibliothèque requise par d'autres mods.",
+      "icon": "tctcore.png"
+    },
+    {
+      "name": "Architectury API",
+      "version": "13.0.11",
+      "author": "shedaniel",
+      "category": "Bibliothèque",
+      "description": "Bibliothèque de compatibilité utilisée par de nombreux mods multi-plateformes.",
+      "icon": "architectury.png"
+    },
+    {
+      "name": "FTB Library",
+      "version": "2101.1.36",
+      "author": "FTB Team",
+      "category": "Bibliothèque",
+      "description": "Bibliothèque requise par les mods FTB (Quests, Teams…).",
+      "icon": "ftblibrary.png"
+    },
+    {
+      "name": "Moonlight Lib",
+      "version": "3.6.9",
+      "author": "MehVahdJukaar",
+      "category": "Bibliothèque",
+      "description": "Bibliothèque requise par plusieurs mods de contenu et de décoration.",
+      "icon": "moonlight.png"
+    },
+    {
+      "name": "Sable",
+      "version": "2.0.5",
+      "author": "BobMowzie",
+      "category": "Bibliothèque",
+      "description": "Bibliothèque requise par les mods de BobMowzie (dont Mowzie's Mobs).",
+      "icon": "sable.png"
+    },
+    {
+      "name": "Connector",
+      "version": "2.0.0-beta.17",
+      "author": "Sinytra",
+      "category": "Bibliothèque",
+      "description": "Permet d'utiliser des mods Fabric sur NeoForge.",
+      "icon": "connector.webp"
+    },
+    {
+      "name": "Continuity",
+      "version": "3.0.0",
+      "author": "PepperCode1",
+      "category": "Visuel",
+      "description": "Ajoute des textures connectées et des textures personnalisées aux blocs.",
+      "icon": "icon.png"
+    },
+    {
+      "name": "CraterLib",
+      "version": "3.1.3",
+      "author": "",
+      "category": "Bibliothèque",
+      "description": "Bibliothèque requise par certains mods.",
+      "icon": "crater.webp"
+    },
+    {
+      "name": "FancyMenu",
+      "version": "3.9.12",
+      "author": "Keksuccino",
+      "category": "Utilitaire",
+      "description": "Personnalise les menus et les écrans de Minecraft.",
+      "icon": "fancy.webp"
+    },
+    {
+      "name": "Forgified Fabric API",
+      "version": "0.116.15+2.3.5",
+      "author": "Forgified Fabric API Team",
+      "category": "Bibliothèque",
+      "description": "Portage de Fabric API permettant la compatibilité avec NeoForge.",
+      "icon": "forgified.webp"
+    },
+    {
+      "name": "Konkrete",
+      "version": "1.9.9",
+      "author": "Keksuccino",
+      "category": "Bibliothèque",
+      "description": "Bibliothèque utilisée par plusieurs mods de Keksuccino.",
+      "icon": "konkrete.webp"
+    },
+    {
+      "name": "Melody",
+      "version": "1.0.10",
+      "author": "Keksuccino",
+      "category": "Bibliothèque",
+      "description": "Bibliothèque audio utilisée par certains mods.",
+      "icon": "melody.webp"
+    },
+    {
+      "name": "Ok Zoomer",
+      "version": "10.0.0-beta.13",
+      "author": "Enjarai",
+      "category": "Utilitaire",
+      "description": "Ajoute une fonction de zoom configurable en jeu.",
+      "icon": "zommer.webp"
+    },
+    {
+      "name": "Simple RPC",
+      "version": "4.1.4",
+      "author": "",
+      "category": "Social",
+      "description": "Affiche des informations de présence personnalisées.",
+      "icon": "rpc.png"
+    },
+    {
+      "name": "Sulfur Depths",
+      "version": "1.0.3",
+      "author": "",
+      "category": "Exploration",
+      "description": "Ajoute de nouvelles profondeurs souterraines à explorer.",
+      "icon": "sulfure.png"
+    },
+    {
+      "name": "TerraBlender",
+      "version": "4.1.0.8",
+      "author": "TheAdubbz",
+      "category": "Bibliothèque",
+      "description": "Bibliothèque permettant aux mods d'ajouter des biomes et des générations de monde.",
+      "icon": "blender.png"
+    }
+  ]
+}
